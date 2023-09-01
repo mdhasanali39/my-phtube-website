@@ -29,23 +29,60 @@ const handleLoadCategory = async () => {
     console.log(error);
   }
 };
-const handleCategoryClick = (e) => {
-  // console.log(e.target.id);
-
-  handleShowVideo(e.target.id);
+// get the category click event 
+let CategoryEvent;
+const handleCategoryClick = (e, isClicked) => {
+  CategoryEvent = e;
+  if(isClicked){
+    handleShowVideo(e.target.id, isClicked)
+  }
+  // for(let allClassOfA of e.target.classList){
+  //   if(allClassOfA === 'font-medium'){
+  //     e.target.classList.add('')
+  //   }
+  // }
+  if(!isClicked){
+    handleShowVideo(e.target.id);
+  }
 };
-const handleShowVideo = async (categoryId) => {
+const handleShowVideo = async (categoryId, isClicked) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await res.json();
   const categoryData = data?.data;
+   console.log(categoryData);
+   const noDataFoundContainer = document.getElementById('no-data-found-container');
+    if(categoryData.length === 0){
+      noDataFoundContainer.classList.remove('hidden');
+      noDataFoundContainer.classList.add('flex')
+    }else{
+      noDataFoundContainer.classList.remove('flex');
+      noDataFoundContainer.classList.add('hidden')
+    }
+  //  sort by views function 
+   const sortVideosByViews = (x,y) =>{
+     if(parseFloat(x?.others?.views) < parseFloat(y?.others?.views)){
+        return 1;
+     }
+     else if(parseFloat(x?.others?.views) > parseFloat(y?.others?.views)){
+      return -1;
+     }
+     else{
+      return 0;
+     }
+   }
+   if(isClicked){
+    categoryData.sort(sortVideosByViews)
+   }
+
 
   //   get videos container element
   const videosContainer = document.getElementById("videos-container");
   videosContainer.innerHTML = '';
 
   categoryData.forEach((singleCategory) => {
+    
 
     // get hours and minutes
     // console.log(singleCategory?.others?.posted_date ? parseFloat(singleCategory?.others?.posted_date) / 3600 : '');
@@ -56,7 +93,7 @@ const handleShowVideo = async (categoryId) => {
     minute = Math.round(('.'+minute) * 60)
     // console.log(hour,minute);
 
-    console.log(singleCategory);
+    // console.log(singleCategory);
     const videoContainer = document.createElement("div");
     videoContainer.classList.add("card", "bg-base-100");
 
@@ -97,5 +134,19 @@ const handleShowVideo = async (categoryId) => {
     videosContainer.appendChild(videoContainer);
   });
 };
+// handle sort by view 
+const handleSortByView = () => {
+
+  handleCategoryClick(CategoryEvent, true)
+}
+
+// handle blog button click 
+const goToBlogPage = () => {
+  window.location.href = 'blog.html'
+}
+// handle home button click in blog page 
+const goToHomePage = () => {
+  window.location.href = 'index.html'
+}
 
 handleLoadCategory();

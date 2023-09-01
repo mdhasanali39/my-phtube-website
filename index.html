@@ -23,6 +23,10 @@
       .ff-inter {
         font-family: "Inter", sans-serif;
       }
+      /* .active{
+        color: white;
+        background-color: orangered;
+      } */
     </style>
   </head>
   <body class="ff-inter max-w-[1280px] mx-auto px-5 py-11">
@@ -35,22 +39,28 @@
         </div>
         <!-- sort by view button -->
         <div>
-            <button class="bg-[#25252533] text-lg font-medium px-4 py-2 rounded-md">Sort by view</button>
+            <button onclick="handleSortByView()" class="bg-[#25252533] text-lg font-medium px-4 py-2 rounded-md">Sort by view</button>
         </div>
         <!-- go to blog page button  -->
         <div>
-          <button class="bg-[#25252533] text-lg text-white font-medium px-4 py-2 rounded-md bg-orange-500">Blog</button>
+          <button onclick="goToBlogPage()" class="bg-[#25252533] text-lg text-white font-medium px-4 py-2 rounded-md bg-orange-500">Blog</button>
         </div>
     </header>
     <main>
       <!-- tab section start -->
       <div id="categories-container" class="tabs justify-center my-9 space-x-7">
-        <!-- <a class="text-lg font-medium px-4 py-1 rounded-md bg-[#25252533] cursor-pointer">Music</a> -->
         <!-- <a class="text-lg text-white font-medium px-4 py-1 rounded-md bg-orange-500">Music</a> -->
       </div>
 
-      <!-- videos section start -->
+      <!-- videos container section start -->
       <div id="videos-container" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      </div>
+      <!-- if no data found, show this element down below -->
+      <div id="no-data-found-container" class="hidden items-center gap-8 flex-col">
+        <img src="./images/Icon.png" 
+        class="w-[130px] h-[130px] mx-auto mt-10"
+        alt="no videos found icon">
+        <h2 class="text-3xl font-bold">Oops!! Sorry, There is no content here</h2>
       </div>
     </main>
 
