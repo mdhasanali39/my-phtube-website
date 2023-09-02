@@ -114,8 +114,8 @@ const handleShowVideo = async (categoryId, isClicked) => {
         alt=""/>
         <h2 class="card-title">${singleCategory?.title}</h2>
       </div>
-      <!-- profile name and verified badge -->
-      <div>
+      <!-- profile name,verified badge and views -->
+      <div class="margin-left-custom space-y-3">
         <p class="flex gap-2 text-sm text-[#171717B2]">${
           singleCategory?.authors[0]?.profile_name
         } 
@@ -125,12 +125,13 @@ const handleShowVideo = async (categoryId, isClicked) => {
             : ""
         }"/>
         </p>
+        <p class="text-sm text-[#171717B2]">${singleCategory?.others?.views + ' views'}</p>
       </div>
 
-      <p class="text-sm text-[#171717B2]">${singleCategory?.others?.views}</p>
 
     </div>
     `;
+
     videosContainer.appendChild(videoContainer);
   });
 };
