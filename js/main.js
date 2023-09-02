@@ -14,12 +14,15 @@ const handleLoadCategory = async () => {
       a.setAttribute("id", category?.category_id);
       a.classList.add(
         "text-lg",
-        "font-medium",
+        "text-center",
+        "w-[120px]",
+        "font-semibold",
         "px-4",
         "py-1",
         "rounded-md",
         "bg-[#25252533]",
-        "cursor-pointer"
+        "cursor-pointer",
+        "category"
       );
       a.innerHTML = `${category?.category}`;
       categoriesContainer.appendChild(a);
@@ -34,6 +37,7 @@ const handleLoadCategory = async () => {
 let CategoryEvent;
 const handleCategoryClick = (e, isClicked) => {
   CategoryEvent = e;
+
   if(isClicked){
     handleShowVideo(e.target.id, isClicked)
   }
