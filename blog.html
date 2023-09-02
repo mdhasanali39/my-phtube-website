@@ -25,12 +25,14 @@
       }
     </style>
   </head>
-  <body class="ff-inter max-w-[1280px] mx-auto px-5 py-11">
+  <body class="relative ff-inter max-w-[1280px] mx-auto px-5 py-11">
     <!-- main header  -->
     <header class="flex justify-between items-center border-b pb-8">
       <!-- logo -->
       <div>
-        <img src="./images/Logo.png" alt="phtube" />
+        <a href="blog.html">
+          <img src="./images/Logo.png" alt="phtube" />
+        </a>
       </div>
       <!-- welcome message/heading  -->
       <div>
@@ -49,82 +51,191 @@
       </div>
     </header>
     <main>
-      <!-- blogs topic category -->
-      <div class="my-9 bg-orange-500 ">
-        <h2 class="text-center font-bold text-white text-3xl pt-4">Blog Shortcut</h2>
-        <div
-          class="tabs justify-center space-x-7 space-y-4 py-10"
-        >
+      <!-- blogs topic Shortcut -->
+      <div class="my-9 bg-orange-500 w-full">
+        <h2 class="text-center font-bold text-white text-3xl pt-4">
+          Blog Shortcut
+        </h2>
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center py-10">
           <a
             href="#blog-one"
-            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            class="w-11/12 cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
             >let's discuss the scope of var, let, and const</a
           >
           <a
             href="#blog-two"
-            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            class="w-11/12 cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
             >let me tell something the use cases of null and undefined</a
           >
           <a
             href="#blog-three"
-            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            class="w-11/12 cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
             >let's get something from me about REST API</a
           >
         </div>
       </div>
 
       <!-- all blogs section -->
-      <section class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- blog 1  -->
-        <div id="blog-one" class="card bg-base-100 shadow-xl cursor-pointer">
-          <figure>
-            <img
-              src="./images/var-vs-let-vs-const.png"
-              alt="var-vs-let-vs-const"
-            />
-          </figure>
-          <div class="card-body">
-            <div>
-              <h2 class="card-title">
-                let's discuss the scope of var, let, and const
+      <section class="bg-base-100 grid gap-8 grid-cols-1">
+        <!-- blog container  -->
+        <article class="max-w-5xl mx-auto bg-base-100 px-4 py-28">
+          <!-- blog 1 -->
+          <div id="blog-one">
+            <header class="mb-3">
+              <h2 class="text-3xl font-semibold text-black mt-3 text-center">
+                Let's discuss the scope of var, let, and const
               </h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <!-- author  -->
+              <div class="my-9 space-x-5 text-center">
+                <p class="text-black inline">Md Hasan ali</p>
+                <p class="text-gray-500 inline">Sep 02,2023</p>
+              </div>
+            </header>
+            <!-- blog text var vs let vs const -->
+            <div class="text-black">
+              <h2 class="text-2xl font-semibold mb-3">
+                Introduction
+              </h2>
+              <p class="text-black mx-auto max-w-[80ch] text-lg ml-4">
+                Before es6, JavaScript only had global scope and function scope.
+                And then there was only the var keyword for variable
+                declaration. But after es6 came with es6 two keywords let and
+                const, and let and const are blocked scope but load was function
+                scope. Because if you declare a variable with load, it becomes
+                global and gets hosted, but if you declare a load variable only
+                inside a function, it gets hosted and goes to the top of the
+                function.
+              </p>
+              <h2 class="text-2xl font-semibold my-3">Scope</h2>
+              <p class="max-w-[80ch] text-lg mx-auto ml-4">
+                Basically scope means from where we can use the variable we have
+                declared/doing.
+              </p>
+              <h2 class="text-2xl font-semibold my-3">
+                Var vs Let vs Const
+              </h2>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                As a result, any variable declared outside of a function block
+                using the var declaration syntax is accessible throughout the
+                entire window.
+              </li>
+              <li class="max-w-[80ch] my-3 text-lg mx-auto ml-4">
+                When a variable is declared inside a function, it has a function
+                scope. This indicates that it is accessible and limited to that
+                function.
+              </li>
+              <!-- ....... -->
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                While let and const are block scoped, var declarations are
+                either globally scoped or function scoped.
+              </li>
+              <li class="max-w-[80ch] my-3 text-lg mx-auto ml-4">
+                Let variables can be updated but not re-declared, const
+                variables cannot be updated or re-declared, and var variables
+                can both be updated and re-declared inside their scope.
+              </li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                Each of them is hoisted to the top of their scope. However, let
+                and const variables are not initialized, but var variables are
+                initialized with undefined.
+              </li>
+              <li class="max-w-[80ch] my-3 text-lg mx-auto ml-4">
+                with const, which needs to be initialized during declaration,
+                var and let can be declared without being initialized.
+              </li>
             </div>
-            <hr />
-            <!-- author  -->
-            <div class="flex">
-              <p>Md Hasan ali</p>
-              <p>Sep 02,2023</p>
+          </div>
+          <!-- blog 2 -->
+          <div id="blog-two" class="my-28">
+            <header class="mb-3">
+              <h2 class="text-3xl font-semibold text-black mt-3 text-center">
+                Let me tell something the use cases of null and undefined
+              </h2>
+              <!-- author  -->
+              <div class="my-9 space-x-5 text-center">
+                <p class="text-black inline">Md Hasan ali</p>
+                <p class="text-gray-500 inline">Sep 02,2023</p>
+              </div>
+            </header>
+            <!-- blog text null vs undefined -->
+            <div class="text-black">
+              <h2 class="text-2xl font-semibold my-3">
+                Use Cases of Null and Undefined
+              </h2>
+              <h3 class="text-xl font-semibold my-3">Undefined</h3>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                Undefined means a variable has been declared but has yet not
+                been assigned a value.
+              </li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                It is an ES1(ECMAScript1) feature.
+              </li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                It is a global object property
+              </li>
+              <h2 class="text-xl font-semibold my-3">Null</h2>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                Null is an assignment value. It can be assigned to a variable as
+                a representation of no value.
+              </li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">
+                It is the intentional absence of the value. It is one of the
+                primitive values of JavaScript.
+              </li>
             </div>
           </div>
-        </div>
-        <!-- blog 2 -->
-        <div id="blog-two" class="card bg-base-100 shadow-xl cursor-pointer">
-          <figure>
-            <img
-              src="./images/use-cases-of-null-and-undefined.png"
-              alt="use-cases-of-null-and-undefined"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">
-              let me tell something the use cases of null and undefined
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+          <!-- blog 3  -->
+          <div id="blog-three">
+            <header class="mb-3">
+              <h2 class="text-3xl font-semibold text-black mt-3 text-center">
+                Let's get something from me about REST API
+              </h2>
+              <!-- author  -->
+              <div class="my-9 space-x-5 text-center">
+                <p class="text-black inline">Md Hasan ali</p>
+                <p class="text-gray-500 inline">Sep 02,2023</p>
+              </div>
+            </header>
+            <div class="text-black">
+              <h2 class="text-2xl font-semibold my-3">REST API</h2>
+              <p class="max-w-[80ch] text-lg mx-auto ml-4">
+                <span class="text-orange-500 font-semibold">RE</span
+                >presentational
+                <span class="text-orange-500 font-semibold">S</span>tate
+                <span class="text-orange-500 font-semibold">T</span>ransfer,
+                abbreviated as REST
+              </p>
+              <h2 class="text-xl font-semibold my-3">
+                Methods To Interact With JavaScript REST API
+              </h2>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">XMLHttpRequest</li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">Fetch</li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">Axios</li>
+              <li class="max-w-[80ch] text-lg mx-auto ml-4">SuperAgent</li>
+              <h2 class="text-xl font-semibold my-3">
+                Let's Know Something About Fetch
+              </h2>
+              <p class="max-w-[80ch] text-lg mx-auto ml-4">
+                To load information from web pages and send HTTP queries to
+                servers, utilize the straightforward native JavaScript REST API
+                called Fetch.
+              </p>
+              <h2 class="text-xl font-semibold my-3 ">Syntax</h2>
+              <p class="max-w-[80ch] text-lg mx-auto ml-4">
+                <code>
+                  const testFetch = () => { <br />
+                  fetch('URL', ?{}) // ? means optional <br />
+                  .then(res => res.json()) <br />
+                  .then(data => { <br />
+                  console.log(data)<br />
+                  })<br />
+                  .catch(error => console.log(error))<br />
+                  }
+                </code>
+              </p>
+            </div>
           </div>
-        </div>
-        <!-- blog 3 -->
-        <div id="blog-three" class="card bg-base-100 shadow-xl cursor-pointer">
-          <figure>
-            <img src="./images/rest-api.png" alt="rest-api" />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">
-              let's get something from me about REST API
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-          </div>
-        </div>
+        </article>
       </section>
     </main>
     <!-- custom js file  -->

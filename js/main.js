@@ -23,6 +23,7 @@ const handleLoadCategory = async () => {
       );
       a.innerHTML = `${category?.category}`;
       categoriesContainer.appendChild(a);
+      // added onclick to a
       a.onclick = handleCategoryClick;
     });
   } catch (error) {
@@ -36,15 +37,12 @@ const handleCategoryClick = (e, isClicked) => {
   if(isClicked){
     handleShowVideo(e.target.id, isClicked)
   }
-  // for(let allClassOfA of e.target.classList){
-  //   if(allClassOfA === 'font-medium'){
-  //     e.target.classList.add('')
-  //   }
-  // }
+
   if(!isClicked){
     handleShowVideo(e.target.id);
   }
 };
+
 const handleShowVideo = async (categoryId, isClicked) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
@@ -137,9 +135,16 @@ const handleShowVideo = async (categoryId, isClicked) => {
 };
 // handle sort by view 
 const handleSortByView = () => {
-
-  handleCategoryClick(CategoryEvent, true)
+    handleCategoryClick(CategoryEvent, true)
 }
+
+// default call for handleShowVideo
+// and sort by view 
+const defaultVideosWithSort = () => {
+  handleShowVideo('1000')
+  
+}
+defaultVideosWithSort()
 
 // handle blog button click 
 const goToBlogPage = () => {
