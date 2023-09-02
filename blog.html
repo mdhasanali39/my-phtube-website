@@ -32,21 +32,100 @@
       <div>
         <img src="./images/Logo.png" alt="phtube" />
       </div>
+      <!-- welcome message/heading  -->
+      <div>
+        <h1 class="font-bold text-3xl">
+          Welcome to <span class="text-orange-500">Blog page</span>
+        </h1>
+      </div>
       <!-- go to Home page button  -->
       <div>
         <button
-        onclick="goToHomePage()"
-          class="bg-[#25252533] text-lg text-white font-medium px-4 py-2 rounded-md bg-orange-500"
+          onclick="goToHomePage()"
+          class="text-lg text-white font-medium px-4 py-2 rounded-md bg-orange-500"
         >
           Home
         </button>
       </div>
     </header>
     <main>
-        <!-- all blogs section -->
-        <section>
-            
-        </section>
+      <!-- blogs topic category -->
+      <div class="my-9 bg-orange-500 ">
+        <h2 class="text-center font-bold text-white text-3xl pt-4">Blog Shortcut</h2>
+        <div
+          class="tabs justify-center space-x-7 space-y-4 py-10"
+        >
+          <a
+            href="#blog-one"
+            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            >let's discuss the scope of var, let, and const</a
+          >
+          <a
+            href="#blog-two"
+            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            >let me tell something the use cases of null and undefined</a
+          >
+          <a
+            href="#blog-three"
+            class="cursor-pointer text-lg font-medium px-4 py-1 rounded-md bg-base-100"
+            >let's get something from me about REST API</a
+          >
+        </div>
+      </div>
+
+      <!-- all blogs section -->
+      <section class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- blog 1  -->
+        <div id="blog-one" class="card bg-base-100 shadow-xl cursor-pointer">
+          <figure>
+            <img
+              src="./images/var-vs-let-vs-const.png"
+              alt="var-vs-let-vs-const"
+            />
+          </figure>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">
+                let's discuss the scope of var, let, and const
+              </h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+            </div>
+            <hr />
+            <!-- author  -->
+            <div class="flex">
+              <p>Md Hasan ali</p>
+              <p>Sep 02,2023</p>
+            </div>
+          </div>
+        </div>
+        <!-- blog 2 -->
+        <div id="blog-two" class="card bg-base-100 shadow-xl cursor-pointer">
+          <figure>
+            <img
+              src="./images/use-cases-of-null-and-undefined.png"
+              alt="use-cases-of-null-and-undefined"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              let me tell something the use cases of null and undefined
+            </h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+          </div>
+        </div>
+        <!-- blog 3 -->
+        <div id="blog-three" class="card bg-base-100 shadow-xl cursor-pointer">
+          <figure>
+            <img src="./images/rest-api.png" alt="rest-api" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              let's get something from me about REST API
+            </h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- custom js file  -->
     <script src="js/main.js"></script>
